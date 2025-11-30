@@ -2,16 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Challenge 1 – Error Detection</title>
+<title>Challenge 1 – Web Dev Error</title>
 <style>
   body {
     font-family: Arial, sans-serif;
     background-color: #eef1f2;
     padding: 40px;
     text-align: center;
-  }
-  h1 {
-    color: #333;
   }
   .container {
     background: white;
@@ -64,32 +61,35 @@
 
 <body>
 
-<h1>🧩 Challenge 1 – Identify & Fix the Error</h1>
+<h1>🧩 Challenge 1 – Find the Web Development Error</h1>
 
 <div class="container">
 
-  <p><strong>Step 1:</strong> Analyze the code shown in the image below.</p>
+  <p><strong>Step 1:</strong> Analyze the web development code shown in the image.</p>
 
-  <!-- ✨ Replace this with your own code image -->
-  <img src="code.png" alt="Code Image">
+  <!-- Replace with your real code screenshot -->
+  <img src="webcode.png" alt="Code Image">
 
-  <p><strong>Step 2:</strong> Here is the same code shown as text:</p>
+  <p><strong>Step 2:</strong> Here is the same code as text:</p>
 
-  <pre>
-function greet(name) {
-    console.log("Hello, " + name;
+<pre>
+&lt;button onclick="showMessage()"&gt;Click Me&lt;/button&gt;
+&lt;p id="msg"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+function showMessage() {
+    document.getElmentById("msg").innerHTML = "Welcome!";
 }
+&lt;/script&gt;
+</pre>
 
-greet("Mahmoud");
-  </pre>
-
-  <p><strong>Step 3:</strong> Identify the type of error AND write the corrected version of the incorrect line.</p>
+  <p><strong>Step 3:</strong> Identify the <em>type of error</em> AND write the <em>corrected line</em>.</p>
 
   <label><strong>Error Type:</strong></label>
-  <input type="text" id="errorType" placeholder="Example: Syntax error">
+  <input type="text" id="errorType" placeholder="Example: DOM error">
 
   <label><strong>Corrected Line:</strong></label>
-  <input type="text" id="correctLine" placeholder='Example: console.log("Hello, " + name);'>
+  <input type="text" id="correctLine" placeholder='Example: document.getElementById("msg").innerHTML = "Welcome!";'>
 
   <button onclick="checkAnswer()">Submit</button>
 
@@ -102,8 +102,8 @@ function checkAnswer() {
     let type = document.getElementById("errorType").value.trim().toLowerCase();
     let line = document.getElementById("correctLine").value.trim();
 
-    let correctType = "syntax error"; 
-    let correctLine = 'console.log("Hello, " + name);';
+    let correctType = "dom error"; 
+    let correctLine = 'document.getElementById("msg").innerHTML = "Welcome!";';
 
     if (type === correctType && line === correctLine) {
         document.getElementById("result").style.color = "green";
@@ -112,7 +112,7 @@ function checkAnswer() {
     } else {
         document.getElementById("result").style.color = "red";
         document.getElementById("result").innerHTML =
-          "❌ Incorrect. Check the missing parenthesis.";
+          "❌ Incorrect. Check the spelling of the JavaScript method.";
     }
 }
 </script>
