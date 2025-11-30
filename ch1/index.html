@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Challenge 1 – Debug the Code</title>
+<title>Challenge 1 – Debugging</title>
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -10,43 +10,85 @@
     padding: 40px;
     text-align: center;
   }
-  h1 {
-    color: #333;
+  .box {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 700px;
+    margin: auto;
+    text-align: left;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   }
-  p {
-    font-size: 18px;
+  pre {
+    background: #222;
+    color: #0f0;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 17px;
+    overflow-x: auto;
   }
-  #secretMessage {
-    margin-top: 25px;
-    font-size: 22px;
+  input {
+    width: 90%;
+    padding: 12px;
+    font-size: 16px;
+    margin-top: 15px;
+  }
+  button {
+    margin-top: 15px;
+    padding: 12px 20px;
+    font-size: 17px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  #result {
+    font-size: 20px;
+    margin-top: 20px;
     font-weight: bold;
-    color: green;
-    display: none;
   }
 </style>
 </head>
+
 <body>
 
-<h1>🧩 Challenge 1 – Debug the Error</h1>
+<h1>🧩 Challenge 1 – Find the Error</h1>
 
-<p>
-This button SHOULD reveal a hidden message.<br>
-But something is wrong. You need to fix the error.
-</p>
+<div class="box">
+  <p>The code below has an error. Find the incorrect line and rewrite it correctly:</p>
 
-<button onclick="showMssage()">Reveal Message</button>
+  <pre>
+function addNumbers(a, b) {
+    return a + b;
+}
 
-<p><em>Hint: Open DevTools → Console. Find the error. Fix the function name.</em></p>
+console.log(addNubmers(5, 7)); // Error here
+  </pre>
 
-<div id="secretMessage">
-  ✅ Correct fix!<br><br>
-  The next QR code is in the <strong>RESTAURANT 🍽️</strong>
+  <p><strong>Write the correct line here:</strong></p>
+  <input type="text" id="answer" placeholder="Type the corrected line exactly...">
+
+  <button onclick="check()">Submit</button>
+
+  <div id="result"></div>
 </div>
 
 <script>
-// ❌ There is an error in this function name on purpose
-function showMessage() {
-    document.getElementById("secretMessage").style.display = "block";
+function check() {
+    let user = document.getElementById("answer").value.trim();
+
+    let correctLine = "console.log(addNumbers(5, 7));";
+
+    if (user === correctLine) {
+        document.getElementById("result").style.color = "green";
+        document.getElementById("result").innerHTML =
+          "✅ Correct!<br>The next QR code is in the <strong>RESTAURANT 🍽️</strong>";
+    } else {
+        document.getElementById("result").style.color = "red";
+        document.getElementById("result").innerHTML =
+          "❌ Incorrect. Look carefully at the function name.";
+    }
 }
 </script>
 
