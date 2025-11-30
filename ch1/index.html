@@ -1,57 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Hack Club QR Challenge</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f8f9fa;
-      margin: 0;
-      padding: 40px;
-      text-align: center;
-    }
-    h1 {
-      color: #333;
-      font-size: 40px;
-    }
-    p {
-      color: #444;
-      font-size: 20px;
-      max-width: 700px;
-      margin: auto;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 12px 25px;
-      font-size: 20px;
-      color: white;
-      background-color: #007bff;
-      text-decoration: none;
-      border-radius: 8px;
-    }
-    .btn:hover {
-      background-color: #0056b3;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Challenge 1</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #eef1f2;
+    padding: 40px;
+    text-align: center;
+  }
+  h1 {
+    color: #333;
+  }
+  .box {
+    background: white;
+    padding: 25px;
+    max-width: 600px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  input {
+    padding: 10px;
+    width: 80%;
+    font-size: 18px;
+    margin-top: 15px;
+  }
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  #message {
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: bold;
+  }
+</style>
 </head>
 <body>
 
-  <h1>🔍 Hack Club QR Challenge</h1>
-  <p>
-    Welcome to the QR Challenge adventure!  
-    There are <strong>4 hidden QR codes</strong> placed around the Sakan, Restaurant, and Playground.  
-    Each QR code leads to a puzzle webpage. Solve every puzzle to collect all 4 secret codes.
-  </p>
+<h1>🧩 Challenge 1</h1>
 
-  <p><strong>The first team to collect all 4 wins!</strong></p>
+<div class="box">
+  <p><strong>Fix the broken function name:</strong></p>
 
-  <a class="btn" href="#">Start by finding the first QR code!</a>
+  <p>What is the correct function name to show an alert?</p>
 
-  <p style="margin-top:40px; color:#666; font-size:14px;">
-    This is only the starting page — the real game begins when you scan the first QR.
-  </p>
+  <input type="text" id="answer" placeholder="Write your answer here...">
+
+  <button onclick="checkAnswer()">Submit</button>
+
+  <p id="message"></p>
+</div>
+
+<script>
+function checkAnswer() {
+    let ans = document.getElementById("answer").value.trim().toLowerCase();
+
+    if (ans === "alert") {
+        document.getElementById("message").style.color = "green";
+        document.getElementById("message").innerHTML =
+          "✅ Correct!<br><br>The next QR is in the <strong>RESTAURANT</strong> 🍽️";
+    } else {
+        document.getElementById("message").style.color = "red";
+        document.getElementById("message").innerHTML =
+          "❌ Incorrect. Hint: It starts with 'a' and is used to show messages.";
+    }
+}
+</script>
 
 </body>
 </html>
