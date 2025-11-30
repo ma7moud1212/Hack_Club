@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Challenge 2 – CSS Selector Error</title>
+<title>Challenge 2 – Syntax Error</title>
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -57,27 +57,21 @@
 
 <body>
 
-<h1>🧩 Challenge 2 – Find the CSS Error</h1>
+<h1>🧩 Challenge 2 – Find the Syntax Error</h1>
 
 <div class="container">
 
-  <p><strong>Analyze this simple HTML & CSS. What is the mistake?</strong></p>
+  <p><strong>Analyze this simple HTML code. What is the mistake?</strong></p>
 
 <pre>
-&lt;style&gt;
-para {
-    color: blue;
-}
-&lt;/style&gt;
-
-&lt;p class="para"&gt;Hello!&lt;/p&gt;
+&lt;p&gt;Hello World
 </pre>
 
   <p><strong>Step 1:</strong> What type of error is this?</p>
-  <input type="text" id="errorType" placeholder="Example: CSS selector error">
+  <input type="text" id="errorType" placeholder="Example: Syntax error">
 
   <p><strong>Step 2:</strong> Write the corrected line:</p>
-  <input type="text" id="correctLine" placeholder='Example: .para { color: blue; }'>
+  <input type="text" id="correctLine" placeholder='Example: &lt;p&gt;Hello World&lt;/p&gt;'>
 
   <button onclick="checkAnswer()">Submit</button>
 
@@ -90,8 +84,8 @@ function checkAnswer() {
     let type = document.getElementById("errorType").value.trim().toLowerCase();
     let line = document.getElementById("correctLine").value.trim();
 
-    let correctType = "css selector error"; 
-    let correctLine = '.para { color: blue; }';
+    let correctType = "syntax error"; 
+    let correctLine = '<p>Hello World</p>';
 
     if (type === correctType && line === correctLine) {
         document.getElementById("result").style.color = "green";
@@ -100,7 +94,7 @@ function checkAnswer() {
     } else {
         document.getElementById("result").style.color = "red";
         document.getElementById("result").innerHTML =
-          "❌ Incorrect. Hint: Class selectors must start with a dot (.)";
+          "❌ Incorrect. Hint: HTML tags must be properly closed.";
     }
 }
 </script>
