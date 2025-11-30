@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Challenge 1 – Debugging</title>
+<title>Challenge 1 – Error Detection</title>
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -10,42 +10,53 @@
     padding: 40px;
     text-align: center;
   }
-  .box {
+  h1 {
+    color: #333;
+  }
+  .container {
     background: white;
     padding: 25px;
     border-radius: 10px;
-    max-width: 700px;
+    max-width: 750px;
     margin: auto;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
     text-align: left;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   }
   pre {
-    background: #222;
-    color: #0f0;
+    background: #1e1e1e;
+    color: #00ff00;
     padding: 20px;
     border-radius: 10px;
     font-size: 17px;
     overflow-x: auto;
   }
+  img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
   input {
-    width: 90%;
+    width: 100%;
     padding: 12px;
-    font-size: 16px;
-    margin-top: 15px;
+    margin-top: 10px;
+    font-size: 17px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
   }
   button {
     margin-top: 15px;
-    padding: 12px 20px;
-    font-size: 17px;
+    padding: 15px 20px;
+    font-size: 18px;
     background: #007bff;
-    color: white;
     border: none;
     border-radius: 6px;
+    color: white;
     cursor: pointer;
+    width: 100%;
   }
   #result {
-    font-size: 20px;
     margin-top: 20px;
+    font-size: 20px;
     font-weight: bold;
   }
 </style>
@@ -53,41 +64,55 @@
 
 <body>
 
-<h1>🧩 Challenge 1 – Find the Error</h1>
+<h1>🧩 Challenge 1 – Identify & Fix the Error</h1>
 
-<div class="box">
-  <p>The code below has an error. Find the incorrect line and rewrite it correctly:</p>
+<div class="container">
+
+  <p><strong>Step 1:</strong> Analyze the code shown in the image below.</p>
+
+  <!-- ✨ Replace this with your own code image -->
+  <img src="code.png" alt="Code Image">
+
+  <p><strong>Step 2:</strong> Here is the same code shown as text:</p>
 
   <pre>
-function addNumbers(a, b) {
-    return a + b;
+function greet(name) {
+    console.log("Hello, " + name;
 }
 
-console.log(addNubmers(5, 7)); // Error here
+greet("Mahmoud");
   </pre>
 
-  <p><strong>Write the correct line here:</strong></p>
-  <input type="text" id="answer" placeholder="Type the corrected line exactly...">
+  <p><strong>Step 3:</strong> Identify the type of error AND write the corrected version of the incorrect line.</p>
 
-  <button onclick="check()">Submit</button>
+  <label><strong>Error Type:</strong></label>
+  <input type="text" id="errorType" placeholder="Example: Syntax error">
+
+  <label><strong>Corrected Line:</strong></label>
+  <input type="text" id="correctLine" placeholder='Example: console.log("Hello, " + name);'>
+
+  <button onclick="checkAnswer()">Submit</button>
 
   <div id="result"></div>
+
 </div>
 
 <script>
-function check() {
-    let user = document.getElementById("answer").value.trim();
+function checkAnswer() {
+    let type = document.getElementById("errorType").value.trim().toLowerCase();
+    let line = document.getElementById("correctLine").value.trim();
 
-    let correctLine = "console.log(addNumbers(5, 7));";
+    let correctType = "syntax error"; 
+    let correctLine = 'console.log("Hello, " + name);';
 
-    if (user === correctLine) {
+    if (type === correctType && line === correctLine) {
         document.getElementById("result").style.color = "green";
         document.getElementById("result").innerHTML =
-          "✅ Correct!<br>The next QR code is in the <strong>RESTAURANT 🍽️</strong>";
+          "✅ Correct!<br><br>The next QR code is in the <strong>RESTAURANT 🍽️</strong>";
     } else {
         document.getElementById("result").style.color = "red";
         document.getElementById("result").innerHTML =
-          "❌ Incorrect. Look carefully at the function name.";
+          "❌ Incorrect. Check the missing parenthesis.";
     }
 }
 </script>
