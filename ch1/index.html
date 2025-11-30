@@ -26,11 +26,7 @@
     border-radius: 10px;
     font-size: 17px;
     overflow-x: auto;
-  }
-  img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
   }
   input {
     width: 100%;
@@ -65,12 +61,7 @@
 
 <div class="container">
 
-  <p><strong>Step 1:</strong> Analyze the web development code shown in the image.</p>
-
-  <!-- ⭐ Working online image -->
-  <img src="https://raw.githubusercontent.com/mdn/learning-area/main/javascript/apis/document-code-sample.png" alt="Code Image">
-
-  <p><strong>Step 2:</strong> Here is the same code as text:</p>
+  <p><strong>Analyze this code and identify the error:</strong></p>
 
 <pre>
 &lt;button onclick="showMessage()"&gt;Click Me&lt;/button&gt;
@@ -83,12 +74,10 @@ function showMessage() {
 &lt;/script&gt;
 </pre>
 
-  <p><strong>Step 3:</strong> Identify the <em>type of error</em> AND write the <em>corrected line</em>.</p>
-
-  <label><strong>Error Type:</strong></label>
+  <p><strong>Step 1:</strong> Write the <em>type of error</em>.</p>
   <input type="text" id="errorType" placeholder="Example: DOM error">
 
-  <label><strong>Corrected Line:</strong></label>
+  <p><strong>Step 2:</strong> Write the <em>corrected line of code</em>.</p>
   <input type="text" id="correctLine" placeholder='Example: document.getElementById("msg").innerHTML = "Welcome!";'>
 
   <button onclick="checkAnswer()">Submit</button>
@@ -112,7 +101,7 @@ function checkAnswer() {
     } else {
         document.getElementById("result").style.color = "red";
         document.getElementById("result").innerHTML =
-          "❌ Incorrect. Check the spelling of the JavaScript method.";
+          "❌ Incorrect. Check the JavaScript method name carefully.";
     }
 }
 </script>
