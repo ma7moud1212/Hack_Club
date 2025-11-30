@@ -57,7 +57,7 @@
 
 <body>
 
-<h1>🧩 Challenge 2 – Find the Syntax Error</h1>
+<h1>🧩 Challenge 2</h1>
 
 <div class="container">
 
@@ -68,10 +68,10 @@
 </pre>
 
   <p><strong>Step 1:</strong> What type of error is this?</p>
-  <input type="text" id="errorType" placeholder="Example: Syntax error">
+  <input type="text" id="errorType" >
 
   <p><strong>Step 2:</strong> Write the corrected line:</p>
-  <input type="text" id="correctLine" placeholder='Example: &lt;p&gt;Hello World&lt;/p&gt;'>
+  <input type="text" id="correctLine" >
 
   <button onclick="checkAnswer()">Submit</button>
 
@@ -90,7 +90,7 @@ function checkAnswer() {
     if (type === correctType && line === correctLine) {
         document.getElementById("result").style.color = "green";
         document.getElementById("result").innerHTML =
-          "✅ Correct!<br><br>The next QR code is in the <strong>PLAYGROUND 🏀</strong>";
+          "✅ Correct!<br><br>The next QR code is in the <strong>PLAYGROUND </strong>";
     } else {
         document.getElementById("result").style.color = "red";
         document.getElementById("result").innerHTML =
@@ -101,3 +101,4 @@ function checkAnswer() {
 
 </body>
 </html>
+
