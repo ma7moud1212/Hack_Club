@@ -69,10 +69,10 @@ if score >= 90
 </pre>
 
   <p><strong>Step 1:</strong> What type of error is this?</p>
-  <input type="text" id="errorType" placeholder="Example: Syntax error">
+  <input type="text" id="errorType" >
 
   <p><strong>Step 2:</strong> Write the corrected line:</p>
-  <input type="text" id="correctLine" placeholder='Example: if score >= 90:'>
+  <input type="text" id="correctLine" >
 
   <button onclick="checkAnswer()">Submit</button>
 
@@ -91,7 +91,7 @@ function checkAnswer() {
     if (type === correctType && line === correctLine) {
         document.getElementById("result").style.color = "green";
         document.getElementById("result").innerHTML =
-          "✅ Correct!<br><br>The final QR code is in the <strong>RESTAURANT 🍽️</strong>";
+          "✅ Correct!<br><br>The final QR code is <strong>at 312 room </strong>";
     } else {
         document.getElementById("result").style.color = "red";
         document.getElementById("result").innerHTML =
@@ -102,3 +102,4 @@ function checkAnswer() {
 
 </body>
 </html>
+
