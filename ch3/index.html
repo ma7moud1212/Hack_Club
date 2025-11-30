@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Challenge 3 – Hard Python Debugging</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #eef1f2;
+    padding: 40px;
+    text-align: center;
+  }
+  .container {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 750px;
+    margin: auto;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    text-align: left;
+  }
+  pre {
+    background: #1e1e1e;
+    color: #00ff00;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 17px;
+    overflow-x: auto;
+    margin-bottom: 25px;
+  }
+  input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    font-size: 17px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+  }
+  button {
+    margin-top: 15px;
+    padding: 15px 20px;
+    font-size: 18px;
+    background: #007bff;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+  }
+  #result {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+</style>
+</head>
+
+<body>
+
+<h1>🧩 Challenge 3 – Hard Python Debugging</h1>
+
+<div class="container">
+
+  <p><strong>This Python code contains mistakes. Find them.</strong></p>
+
+<pre>
+if score >= 90
+    prnt("Excellent")
+</pre>
+
+  <p><strong>Step 1:</strong> What type of error is this?</p>
+  <input type="text" id="errorType" placeholder="Example: Syntax error">
+
+  <p><strong>Step 2:</strong> Write the corrected line:</p>
+  <input type="text" id="correctLine" placeholder='Example: if score >= 90:'>
+
+  <button onclick="checkAnswer()">Submit</button>
+
+  <div id="result"></div>
+
+</div>
+
+<script>
+function checkAnswer() {
+    let type = document.getElementById("errorType").value.trim().toLowerCase();
+    let line = document.getElementById("correctLine").value.trim();
+
+    let correctType = "syntax error"; 
+    let correctLine = 'if score >= 90:';
+
+    if (type === correctType && line === correctLine) {
+        document.getElementById("result").style.color = "green";
+        document.getElementById("result").innerHTML =
+          "✅ Correct!<br><br>The final QR code is in the <strong>RESTAURANT 🍽️</strong>";
+    } else {
+        document.getElementById("result").style.color = "red";
+        document.getElementById("result").innerHTML =
+          "❌ Incorrect. Hint: Python requires a colon (:) after an if-statement.";
+    }
+}
+</script>
+
+</body>
+</html>
