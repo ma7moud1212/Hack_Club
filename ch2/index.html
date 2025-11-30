@@ -61,23 +61,23 @@
 
 <div class="container">
 
-  <p><strong>Analyze this HTML & CSS and find the mistake:</strong></p>
+  <p><strong>Analyze this simple HTML & CSS. What is the mistake?</strong></p>
 
 <pre>
 &lt;style&gt;
-.pra {
-    color: red;
+para {
+    color: blue;
 }
 &lt;/style&gt;
 
 &lt;p class="para"&gt;Hello!&lt;/p&gt;
 </pre>
 
-  <p><strong>Step 1:</strong> Write the <em>type of error</em>.</p>
+  <p><strong>Step 1:</strong> What type of error is this?</p>
   <input type="text" id="errorType" placeholder="Example: CSS selector error">
 
-  <p><strong>Step 2:</strong> Write the <em>corrected line or rule</em>.</p>
-  <input type="text" id="correctLine" placeholder='Example: .para { color: red; }'>
+  <p><strong>Step 2:</strong> Write the corrected line:</p>
+  <input type="text" id="correctLine" placeholder='Example: .para { color: blue; }'>
 
   <button onclick="checkAnswer()">Submit</button>
 
@@ -91,7 +91,7 @@ function checkAnswer() {
     let line = document.getElementById("correctLine").value.trim();
 
     let correctType = "css selector error"; 
-    let correctLine = '.para { color: red; }';
+    let correctLine = '.para { color: blue; }';
 
     if (type === correctType && line === correctLine) {
         document.getElementById("result").style.color = "green";
@@ -100,7 +100,7 @@ function checkAnswer() {
     } else {
         document.getElementById("result").style.color = "red";
         document.getElementById("result").innerHTML =
-          "❌ Incorrect. Check the CSS class name carefully.";
+          "❌ Incorrect. Hint: Class selectors must start with a dot (.)";
     }
 }
 </script>
