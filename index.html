@@ -1,57 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Hack Club QR Challenge</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f8f9fa;
-      margin: 0;
-      padding: 40px;
-      text-align: center;
-    }
-    h1 {
-      color: #333;
-      font-size: 40px;
-    }
-    p {
-      color: #444;
-      font-size: 20px;
-      max-width: 700px;
-      margin: auto;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 12px 25px;
-      font-size: 20px;
-      color: white;
-      background-color: #007bff;
-      text-decoration: none;
-      border-radius: 8px;
-    }
-    .btn:hover {
-      background-color: #0056b3;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Hack Club QR Challenge</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f4f5;
+    text-align: center;
+    padding: 60px;
+  }
+  h1 {
+    font-size: 40px;
+    color: #222;
+  }
+  p {
+    font-size: 20px;
+    color: #444;
+    max-width: 700px;
+    margin: auto;
+  }
+  .btn {
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 22px;
+    color: white;
+    background: #007bff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+</style>
 </head>
 <body>
 
-  <h1>🔍 Hack Club QR Challenge</h1>
-  <p>
-    Welcome to the QR Challenge adventure!  
-    There are <strong>4 hidden QR codes</strong> placed around the Sakan, Restaurant, and Playground.  
-    Each QR code leads to a puzzle webpage. Solve every puzzle to collect all 4 secret codes.
-  </p>
+<h1>🔍 Hack Club QR Challenge</h1>
+<p>Start your mission. Solve Challenge 1 to find the location of the next QR code!</p>
 
-  <p><strong>The first team to collect all 4 wins!</strong></p>
-
-  <a class="btn" href="#">Start by finding the first QR code!</a>
-
-  <p style="margin-top:40px; color:#666; font-size:14px;">
-    This is only the starting page — the real game begins when you scan the first QR.
-  </p>
+<button class="btn" onclick="location.href='ch1/index.html'">Start Game</button>
 
 </body>
 </html>
